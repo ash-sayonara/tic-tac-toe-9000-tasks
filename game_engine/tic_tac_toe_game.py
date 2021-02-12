@@ -1,4 +1,4 @@
-#%%file tic_tac_toe_game.py
+"logic of the game"
 from copy import deepcopy
 from typing import Callable, List
 from .tic_tac_toe_common_lib import TicTacToeTurn, TicTacToeGameInfo, AbstractTicTacToeGame
@@ -108,3 +108,4 @@ class TicTacToeGame(AbstractTicTacToeGame):
                 result.field[turn.x_coordinate][turn.y_coordinate] = "O"
         return result
 
+        
