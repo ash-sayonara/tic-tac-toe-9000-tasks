@@ -48,8 +48,4 @@ class AbstractTicTacToeGame(ABC):
 
     @abstractmethod
     def get_game_info(self) -> TicTacToeGameInfo:
-<<<<<<< HEAD
-        """обычный геттер"""
-=======
-        """обычный геттер"""
->>>>>>> tasks
+        """обычный геттер."""
