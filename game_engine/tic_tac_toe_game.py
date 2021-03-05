@@ -29,7 +29,7 @@ class TicTacToeGame(AbstractTicTacToeGame):
         self.__second_player_id = second_player_id
         self.__winner_id = ""
         self.__strategy = strategy
-        self.__turns = [] # type: List[TicTacToeTurn]
+        self.__turns = List[TicTacToeTurn] = []
         
     def is_turn_correct(self, turn: TicTacToeTurn) -> bool:
         """The function for cheaking the turn's correctness"""
@@ -43,11 +43,13 @@ class TicTacToeGame(AbstractTicTacToeGame):
         if field[turn.x_coordinate][turn.y_coordinate] != " ":
             return False
         return True
-    def carrent_player_id(self) -> str:
+
+    def current_player_id(self) -> str:
         """The function for knowing player's id"""
         if len(self.__turns)%2==0:
             return self.__first_player_id
         return self.__second_player_id
+
     def do_turn(self, turn: TicTacToeTurn) -> TicTacToeGameInfo:
         """The function for doing a turn"""
         if not self.is_turn_correct(turn):
@@ -55,6 +57,7 @@ class TicTacToeGame(AbstractTicTacToeGame):
         self.__turns.append(deepcopy(turn))
         self.set_winner()
         return self.get_game_info()
+
     def set_winner(self) -> None:
         """The function for cheacking the winner"""
         field = self.get_game_info().field
@@ -88,6 +91,7 @@ class TicTacToeGame(AbstractTicTacToeGame):
             draw = False
         if draw:
             self.__winner_id = "draw"
+            
     def get_game_info(self) -> TicTacToeGameInfo:
         """The function for taking information about the game"""
         result = TicTacToeGameInfo(
