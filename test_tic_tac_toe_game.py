@@ -3,8 +3,8 @@ from game_engine import TicTacToeGame, TicTacToeGameInfo, TicTacToeTurn
 def test_scenario():
     game = TicTacToeGame(
         game_id="0001",
-        first_player_id="Petya",
-        second_player_id="Vasya"
+        first_player_name="Petya",
+        second_player_name="Vasya"
     )
 
     assert game.get_game_info() == TicTacToeGameInfo(
@@ -15,14 +15,14 @@ def test_scenario():
             [" ", " ", " "]
         ],
         sequence_of_turns=[],
-        first_player_id="Petya",
-        second_player_id="Vasya",
-        winner_id=""
+        first_player_name="Petya",
+        second_player_name="Vasya",
+        winner_name=""
     )
 
     assert game.is_turn_correct(
         TicTacToeTurn(
-            player_id="Petya",
+            player_name="Petya",
             x_coordinate=0,
             y_coordinate=0
         )
@@ -30,7 +30,7 @@ def test_scenario():
 
     assert game.is_turn_correct(
         TicTacToeTurn(
-            player_id="Petya",
+            player_name="Petya",
             x_coordinate=-10,
             y_coordinate=-10
         )
@@ -38,7 +38,7 @@ def test_scenario():
 
     assert game.is_turn_correct(
         TicTacToeTurn(
-            player_id="Vasya",
+            player_name="Vasya",
             x_coordinate=0,
             y_coordinate=0
         )
@@ -54,14 +54,14 @@ def test_scenario():
             [" ", " ", " "]
         ],
         sequence_of_turns=[],
-        first_player_id="Petya",
-        second_player_id="Vasya",
-        winner_id=""
+        first_player_name="Petya",
+        second_player_name="Vasya",
+        winner_name=""
     )
 
     assert game.do_turn(
         TicTacToeTurn(
-            player_id="Petya",
+            player_name="Petya",
             x_coordinate=0,
             y_coordinate=0
         )
@@ -74,14 +74,14 @@ def test_scenario():
         ],
         sequence_of_turns=[
             TicTacToeTurn(
-                player_id="Petya",
+                player_name="Petya",
                 x_coordinate=0,
                 y_coordinate=0
             )
         ],
-        first_player_id="Petya",
-        second_player_id="Vasya",
-        winner_id=""
+        first_player_name="Petya",
+        second_player_name="Vasya",
+        winner_name=""
     )
 
     assert game.get_game_info() == TicTacToeGameInfo(
@@ -93,19 +93,19 @@ def test_scenario():
         ],
         sequence_of_turns=[
             TicTacToeTurn(
-                player_id="Petya",
+                player_name="Petya",
                 x_coordinate=0,
                 y_coordinate=0
             )
         ],
-        first_player_id="Petya",
-        second_player_id="Vasya",
-        winner_id=""
+        first_player_name="Petya",
+        second_player_name="Vasya",
+        winner_name=""
     )
 
     assert game.is_turn_correct(
         TicTacToeTurn(
-            player_id="Vasya",
+            player_name="Vasya",
             x_coordinate=0,
             y_coordinate=0
         )
@@ -113,7 +113,7 @@ def test_scenario():
 
     assert game.is_turn_correct(
         TicTacToeTurn(
-            player_id="Petya",
+            player_name="Petya",
             x_coordinate=0,
             y_coordinate=0
         )
@@ -139,14 +139,14 @@ def test_scenario():
             TicTacToeTurn("Vasya", 1, 1),
             TicTacToeTurn("Petya", 0, 2)
         ],
-        first_player_id="Petya",
-        second_player_id="Vasya",
-        winner_id="Petya"
+        first_player_name="Petya",
+        second_player_name="Vasya",
+        winner_name="Petya"
     )
 
     assert game.is_turn_correct(
         TicTacToeTurn(
-            player_id="Vasya",
+            player_name="Vasya",
             x_coordinate=1,
             y_coordinate=2
         )

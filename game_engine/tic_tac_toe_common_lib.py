@@ -5,7 +5,7 @@ from dataclasses import dataclass
  
 @dataclass
 class TicTacToeTurn:
-    player_id: str
+    player_name: str
     x_coordinate: int
     y_coordinate: int
  
@@ -15,14 +15,16 @@ class TicTacToeGameInfo:
     game_id: str
     field: List[List[str]]
     sequence_of_turns: List[TicTacToeTurn]
-    first_player_id: str
-    second_player_id: str
-    winner_id: str # а какие могут быть варианты?
+    first_player_name: str
+    second_player_name: str
+    winner_name: str # а какие могут быть варианты?
  
  
 @dataclass
 class UserInfo:
+    user_name: str
     user_id: str
+    user_pass: str
     secret_key: str
  
  
@@ -31,8 +33,8 @@ class AbstractTicTacToeGame(ABC):
     def __init__(
             self,
             game_id: str,
-            first_player_id: str,
-            second_player_id: str,
+            first_player_name: str,
+            second_player_name: str,
             strategy: Callable[[TicTacToeGameInfo], TicTacToeTurn] = None
         ) -> None:
         """пока просто раскладываем по полям"""
