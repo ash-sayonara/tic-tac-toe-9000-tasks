@@ -11,9 +11,9 @@ def test_app():
             [" ", " ", " "]
         ],
         sequence_of_turns=[],
-        first_player_name="Petya",
-        second_player_name="Vasya",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Vasya",
+        winner_id=""
     )
 
     assert app.get_game_by_id("1") == TicTacToeGameInfo(
@@ -24,9 +24,9 @@ def test_app():
             [" ", " ", " "]
         ],
         sequence_of_turns=[],
-        first_player_name="Petya",
-        second_player_name="Vasya",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Vasya",
+        winner_id=""
     )
 
     assert app.get_game_by_id("1") == TicTacToeGameInfo(
@@ -37,9 +37,9 @@ def test_app():
             [" ", " ", " "]
         ],
         sequence_of_turns=[],
-        first_player_name="Petya",
-        second_player_name="Vasya",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Vasya",
+        winner_id=""
     )
     
     assert app.do_turn(TicTacToeTurn("Petya",-1,-1), "1") == TicTacToeGameInfo(
@@ -50,9 +50,9 @@ def test_app():
             [" ", " ", " "]
         ],
         sequence_of_turns=[],
-        first_player_name="Petya",
-        second_player_name="Vasya",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Vasya",
+        winner_id=""
     )
     
     assert app.do_turn(TicTacToeTurn("Vasya",0,0), "1") == TicTacToeGameInfo(
@@ -63,9 +63,9 @@ def test_app():
             [" ", " ", " "]
         ],
         sequence_of_turns=[],
-        first_player_name="Petya",
-        second_player_name="Vasya",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Vasya",
+        winner_id=""
     )
     
     assert app.do_turn(TicTacToeTurn("Vasya",0,0), "2") == None
@@ -79,14 +79,14 @@ def test_app():
         ],
         sequence_of_turns=[
             TicTacToeTurn(
-                player_name="Petya",
+                player_id="Petya",
                 x_coordinate=0,
                 y_coordinate=0
             )
         ],
-        first_player_name="Petya",
-        second_player_name="Vasya",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Vasya",
+        winner_id=""
     )
 
     assert app.get_game_by_id("1") == TicTacToeGameInfo(
@@ -98,14 +98,14 @@ def test_app():
         ],
         sequence_of_turns=[
             TicTacToeTurn(
-                player_name="Petya",
+                player_id="Petya",
                 x_coordinate=0,
                 y_coordinate=0
             )
         ],
-        first_player_name="Petya",
-        second_player_name="Vasya",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Vasya",
+        winner_id=""
     )
 
     assert app.do_turn(TicTacToeTurn("Vasya",0,0), "1") == TicTacToeGameInfo(
@@ -117,14 +117,14 @@ def test_app():
         ],
         sequence_of_turns=[
             TicTacToeTurn(
-                player_name="Petya",
+                player_id="Petya",
                 x_coordinate=0,
                 y_coordinate=0
             )
         ],
-        first_player_name="Petya",
-        second_player_name="Vasya",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Vasya",
+        winner_id=""
     )
 
     app.do_turn(TicTacToeTurn("Petya", 1, 0), "1")
@@ -147,9 +147,9 @@ def test_app():
             TicTacToeTurn("Vasya", 1, 1),
             TicTacToeTurn("Petya", 0, 2)
         ],
-        first_player_name="Petya",
-        second_player_name="Vasya",
-        winner_name="Petya"
+        first_player_id="Petya",
+        second_player_id="Vasya",
+        winner_id="Petya"
     )
 
     assert app.start_game("Petya","Sasha") == TicTacToeGameInfo(
@@ -160,9 +160,9 @@ def test_app():
             [" ", " ", " "]
         ],
         sequence_of_turns=[],
-        first_player_name="Petya",
-        second_player_name="Sasha",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Sasha",
+        winner_id=""
     )
 
     assert app.get_game_by_id("2") == TicTacToeGameInfo(
@@ -173,7 +173,7 @@ def test_app():
             [" ", " ", " "]
         ],
         sequence_of_turns=[],
-        first_player_name="Petya",
-        second_player_name="Sasha",
-        winner_name=""
+        first_player_id="Petya",
+        second_player_id="Sasha",
+        winner_id=""
     )

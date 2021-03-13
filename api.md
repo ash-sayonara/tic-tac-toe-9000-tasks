@@ -1,6 +1,6 @@
 # API
 
-### GET: /api/game_info?game_id=1&user_name=Petya&user_id=af056ec7-4f62-4a38-b860-076d5b5d7ea4&user_pass=greengolddog12346&token=9a5adaf4-9353-4d28-b1e7-f4c8753dea10
+### GET: /api/game_info?game_id=1&user_id=Petya&user_secret=af056ec7-4f62-4a38-b860-076d5b5d7ea4&user_pass=greengolddog12346&token=9a5adaf4-9353-4d28-b1e7-f4c8753dea10
 
 **response:**
 ```json
@@ -12,8 +12,8 @@
         [" ", " ", " "]
     ],
     "sequence_of_turns": [],
-    "first_player_name": "Petya",
-    "second_player_name": "Vasya",
+    "first_player_id": "Petya",
+    "second_player_id": "Vasya",
     "winner_id": ""
 }
 ```
@@ -23,7 +23,7 @@
 **request:**
 ```json
 {
-  "user_name": "Petya",
+  "user_id": "Petya",
   "user_pass": "greengolddog12346"
 }
 ```
@@ -31,19 +31,19 @@
 **response**
 ```json
 {
-  "user_name": "Petya",
-  "user_id": "af056ec7-4f62-4a38-b860-076d5b5d7ea4",
+  "user_id": "Petya",
+  "user_secret": "af056ec7-4f62-4a38-b860-076d5b5d7ea4",
   "user_pass": "greengolddog12346",
   "token": "9a5adaf4-9353-4d28-b1e7-f4c8753dea10"
 }
 ```
 если такое имя уже есть - ошибка 403 + объяснение(н: "message": "this username is already used")
 
-### POST: /api/do_turn?game_id=1&user_name=Petya&user_id=af056ec7-4f62-4a38-b860-076d5b5d7ea4&user_pass=greengolddog12346&token=9a5adaf4-9353-4d28-b1e7-f4c8753dea10
+### POST: /api/do_turn?game_id=1&user_id=Petya&user_secret=af056ec7-4f62-4a38-b860-076d5b5d7ea4&user_pass=greengolddog12346&token=9a5adaf4-9353-4d28-b1e7-f4c8753dea10
 **request:**
 ```json
 {
-  "player_name": "Petya",
+  "player_id": "Petya",
   "x_coordinate": 0,
   "y_coordinate": 0
 }
@@ -58,11 +58,11 @@
         [" ", " ", " "]
     ],
     "sequence_of_turns": [{
-                "player_name":"Petya",
+                "player_id":"Petya",
                 "x_coordinate": 0,
                 "y_coordinate": 0}],
-    "first_player_name": "Petya",
-    "second_player_name": "Vasya",
+    "first_player_id": "Petya",
+    "second_player_id": "Vasya",
     "winner_id": ""
 }
 ```
