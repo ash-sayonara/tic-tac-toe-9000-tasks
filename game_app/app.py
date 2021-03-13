@@ -24,7 +24,7 @@ class TicTacToeApp():
 
     def get_game_by_id(self, game_id: str) -> Optional[TicTacToeGameInfo]:
         """The function for getting geme bi id"""
-        if self.__games.get(game_id) is not None:
+        if self.__games.get(game_id):
             return self.__games[game_id].get_game_info()
         return None
 
