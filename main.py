@@ -6,10 +6,10 @@ def print_game_info(game: TicTacToeGame):
     """function for printing players, field, whoes turn and winner"""
     game_info = game.get_game_info()
     print(f"{game_info.first_player_id} vs {game_info.second_player_id}")
-    print(" - - - ")
+    print("-------------")
     for row in game_info.field:
-        print("|" + "|".join(row) + "|")
-        print(" - - - ")
+        print("| " + " | ".join(row) + " |")
+        print("-------------")
     if game_info.winner_id == "":
         print(f"{game.current_player_id()}'s turn")
     elif game_info.winner_id == "draw":

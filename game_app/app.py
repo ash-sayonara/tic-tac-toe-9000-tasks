@@ -22,15 +22,11 @@ class TicTacToeApp:
         return game.get_game_info()
 
     def get_game_by_id(self, game_id: str) -> TicTacToeGameInfo:
-<<<<<<< HEAD
         """The function for getting geme bi id"""
         game = self._games.get(game_id)
         if game:
             return game.get_game_info()
         raise TicTacToeGameNotFoundException(f"no game with id={game_id}")
-=======
-        raise NotImplementedError
->>>>>>> tasks
 
     def do_turn(self, turn: TicTacToeTurn, game_id: str) -> TicTacToeGameInfo:
         """The function for doing turn"""
