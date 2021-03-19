@@ -1,6 +1,8 @@
+"""tests for tic_tac_toe_game.py"""
 from game_engine import TicTacToeGame, TicTacToeGameInfo, TicTacToeTurn
 
 def test_scenario():
+    """all tests in one function as asserts"""
     game = TicTacToeGame(
         game_id="0001",
         first_player_id="Petya",
@@ -26,7 +28,7 @@ def test_scenario():
             x_coordinate=0,
             y_coordinate=0
         )
-    ) == True
+    )
 
     assert game.is_turn_correct(
         TicTacToeTurn(
@@ -34,7 +36,7 @@ def test_scenario():
             x_coordinate=-10,
             y_coordinate=-10
         )
-    ) == False
+    )
 
     assert game.is_turn_correct(
         TicTacToeTurn(
@@ -42,7 +44,7 @@ def test_scenario():
             x_coordinate=0,
             y_coordinate=0
         )
-    ) == False
+    )
 
     game_info = game.get_game_info()
     game_info.field[0][0] = "@"
@@ -109,7 +111,7 @@ def test_scenario():
             x_coordinate=0,
             y_coordinate=0
         )
-    ) == False
+    )
 
     assert game.is_turn_correct(
         TicTacToeTurn(
@@ -117,7 +119,7 @@ def test_scenario():
             x_coordinate=0,
             y_coordinate=0
         )
-    ) == False
+    )
 
     game.do_turn(TicTacToeTurn("Petya", 1, 0))
     game.do_turn(TicTacToeTurn("Vasya", 1, 0))
@@ -150,5 +152,4 @@ def test_scenario():
             x_coordinate=1,
             y_coordinate=2
         )
-    ) == False
-
+    )

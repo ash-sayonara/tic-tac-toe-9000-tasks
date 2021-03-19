@@ -1,7 +1,9 @@
+"""tests for tic_tac_toe_app.py"""
 from game_app import TicTacToeApp
 from game_engine import TicTacToeGameInfo, TicTacToeTurn
 
 def test_1():
+    """all tests in one function as asserts"""
     app = TicTacToeApp()
     game_id_PV = app.start_game("Petya", "Vasya").game_id
     assert len(game_id_PV) > 30
@@ -58,12 +60,7 @@ def test_1():
         ],
         first_player_id="Petya",
         second_player_id="Vasya",
-<<<<<<< HEAD
-        winner_id="draw"
-=======
-        winner_id="Draw"
->>>>>>> tasks
-    )
+        winner_id="draw")
     assert app.get_game_by_id(game_id_PV2) == TicTacToeGameInfo(
         game_id = game_id_PV2,
         field=[
@@ -115,8 +112,4 @@ def test_1():
         first_player_id="Petya",
         second_player_id="Vasya",
         winner_id=""
-<<<<<<< HEAD
     )
-=======
-    )
->>>>>>> tasks

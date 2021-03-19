@@ -1,5 +1,5 @@
-from flask import Flask, request
 from dataclasses import dataclass
+from flask import Flask, request
 from dataclasses_json import dataclass_json
 
 @dataclass_json
