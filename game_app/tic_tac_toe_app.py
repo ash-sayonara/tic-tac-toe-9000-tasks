@@ -25,7 +25,7 @@ class TicTacToeApp:
             game = TicTacToeGame(game_id, first_player_id, second_player_id)
             self._games[game_id] = game
             return game.get_game_info()
-        raise TicTacToeUserNotFoundException(f"user or password is wrong")
+        raise TicTacToeUserNotFoundException(f"user settings are wrong")
 
     def get_game_by_id(self, game_id: str) -> TicTacToeGameInfo:
         """The function for getting geme bi id"""
