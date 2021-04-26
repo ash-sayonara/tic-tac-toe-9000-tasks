@@ -25,6 +25,7 @@ class UserInfo:
     """Information about user(id,password)"""
     user_id: str
     user_pass: str
+    user_secret: str
 
 class AbstractTicTacToeGame(ABC):
     """Abstract class of tic-tac-toe game(in the future we'll inherit from it)"""
