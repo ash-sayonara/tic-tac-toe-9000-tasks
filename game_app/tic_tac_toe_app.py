@@ -18,14 +18,15 @@ class TicTacToeApp:
         self._games: Dict[str, TicTacToeGame] = {}
         self._users: List[UserInfo] = []
 
-    def start_game(self, first_player: UserInfo, second_player: UserInfo) -> TicTacToeGameInfo:
+    def start_game(self, first_player: UserInfo, second_player_id: str) -> TicTacToeGameInfo:
         """The function to add new game to the dictionary of games"""
-        if first_player in self._users and second_player in self._users:
-            game_id = uuid4().hex
-            game = TicTacToeGame(game_id, first_player.user_id, second_player.user_id)
-            self._games[game_id] = game
-            return game.get_game_info()
-        print(first_player,self._users,second_player)
+        for i in self._users:
+            if i.user_id == second_player_id:
+                if first_player in self._users and first_player.user_id != second_player_id:
+                    game_id = uuid4().hex
+                    game = TicTacToeGame(game_id, first_player.user_id, second_player_id)
+                    self._games[game_id] = game
+                    return game.get_game_info()
         raise TicTacToeUserNotFoundException(f"user settings are wrong")
 
     def get_game_by_id(self, game_id: str) -> TicTacToeGameInfo:

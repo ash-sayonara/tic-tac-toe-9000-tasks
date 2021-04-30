@@ -2,7 +2,9 @@
 from abc import ABC, abstractmethod
 from typing import List, Callable
 from dataclasses import dataclass
+from dataclasses_json import dataclass_json
 
+@dataclass_json
 @dataclass
 class TicTacToeTurn:
     """Information about player's turn(id, coordinates)"""
@@ -10,6 +12,7 @@ class TicTacToeTurn:
     x_coordinate: int
     y_coordinate: int
 
+@dataclass_json
 @dataclass
 class TicTacToeGameInfo:
     """Information about one game(id, fied, sequence of turns, players, winner)"""
@@ -20,6 +23,7 @@ class TicTacToeGameInfo:
     second_player_id: str
     winner_id: str # а какие могут быть варианты?
 
+@dataclass_json
 @dataclass
 class UserInfo:
     """Information about user(id,password)"""
