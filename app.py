@@ -46,12 +46,12 @@ def turn_post():
     user_id = request.args.get('user_id')
     user_pass = request.args.get('user_pass')
     user_secret = request.args.get('user_secret')
-    if game_id and user_id and user_pass:
+    if game_id and user_id and user_pass and user_secret and turn:
         user = UserInfo(user_id = user_id, user_pass = user_pass, user_secret = user_secret)
         if turn:
             try:
                 game_info = t_app.do_turn(turn, game_id, user)
-            except TicTacToeGameNotFoundException and TicTacToeUserNotFoundException:
+            except TicTacToeUserNotFoundException and TicTacToeGameNotFoundException:
                 abort(404)
             return game_info.to_json()
     abort(400)

@@ -39,8 +39,8 @@ class TicTacToeApp:
     def do_turn(self, turn: TicTacToeTurn, game_id: str, user: UserInfo) -> TicTacToeGameInfo:
         """The function for doing turn"""
         game = self._games.get(game_id)
-        if game:
-            if (user in self._users) and (game.current_player_id == user.user_id):
+        if game!= None:
+            if (user in self._users) and (game.current_player_id() == user.user_id) and (turn.player_id==user.user_id):
                 return game.do_turn(turn)
-            raise TicTacToeUserNotFoundException(f"user incorrect")
+            raise TicTacToeUserNotFoundException(f"user incorrect")#GameNotFound
         raise TicTacToeGameNotFoundException(f"no game you play with id={game_id}")
